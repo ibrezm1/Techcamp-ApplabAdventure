@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -140,7 +141,8 @@
 
         .image-wrapper {
             position: relative;
-            padding-top: 75%; /* 4:3 aspect ratio */
+            padding-top: 75%;
+            /* 4:3 aspect ratio */
             background-color: var(--img-bg);
             overflow: hidden;
         }
@@ -199,9 +201,10 @@
         }
 
         .copy-btn.copied {
-            background-color: #10b981; /* green result */
+            background-color: #10b981;
+            /* green result */
         }
-        
+
         #loading {
             text-align: center;
             font-size: 1.2rem;
@@ -212,7 +215,7 @@
         .hidden {
             display: none !important;
         }
-        
+
         .links-section {
             display: flex;
             justify-content: center;
@@ -251,14 +254,31 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>Asset Gallery</h1>
             <p class="subtitle">Search and copy raw image URLs for your Applab projects</p>
-            <button id="themeToggle" class="theme-toggle" title="Toggle Light/Dark Mode" aria-label="Toggle Light/Dark Mode">
-                <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                <svg id="sunIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <button id="themeToggle" class="theme-toggle" title="Toggle Light/Dark Mode"
+                aria-label="Toggle Light/Dark Mode">
+                <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg id="sunIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
             </button>
         </header>
 
@@ -268,18 +288,28 @@
 
         <div class="links-section">
             <a href="https://code.org/en-US/tools/app-lab" target="_blank" rel="noopener noreferrer" class="link-chip">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
                 Code.org App Lab
             </a>
-            <a href="https://studio.code.org/courses/applab-intro/units/1/lessons/1/levels/1" target="_blank" rel="noopener noreferrer" class="link-chip">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            <a href="https://studio.code.org/courses/applab-intro/units/1/lessons/1/levels/1?viewAs=Participant"
+                target="_blank" rel="noopener noreferrer" class="link-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
                 App Lab Intro Course
             </a>
         </div>
 
         <div id="loading">Loading images...</div>
         <div class="gallery" id="imageGallery"></div>
-        
+
         <div class="footer">
             Techcamp Applab Adventure Assets
         </div>
@@ -298,7 +328,7 @@
                 const response = await fetch('images.json');
                 if (!response.ok) throw new Error('Failed to load images.json');
                 allImages = await response.json();
-                
+
                 loading.classList.add('hidden');
                 renderGallery(allImages);
             } catch (error) {
@@ -309,7 +339,7 @@
 
         function renderGallery(images) {
             gallery.innerHTML = '';
-            
+
             if (images.length === 0) {
                 gallery.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 2rem;">No images found matching your search.</div>';
                 return;
@@ -320,10 +350,10 @@
             images.forEach(imagePath => {
                 const rawUrl = `${REPO_BASE}${imagePath}?raw=true`;
                 const fileName = imagePath.split('/').pop();
-                
+
                 const card = document.createElement('div');
                 card.className = 'image-card';
-                
+
                 card.innerHTML = `
                     <div class="image-wrapper">
                         <img src="${imagePath}" alt="${fileName}" loading="lazy">
@@ -336,31 +366,31 @@
                         </button>
                     </div>
                 `;
-                
+
                 fragment.appendChild(card);
             });
 
             gallery.appendChild(fragment);
         }
 
-        window.copyToClipboard = async function(text, btnElement) {
+        window.copyToClipboard = async function (text, btnElement) {
             try {
                 await navigator.clipboard.writeText(text);
                 const originalHtml = btnElement.innerHTML;
-                
+
                 btnElement.innerHTML = `
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     Copied!
                 `;
                 btnElement.classList.add('copied');
-                
+
                 setTimeout(() => {
                     btnElement.innerHTML = originalHtml;
                     btnElement.classList.remove('copied');
                 }, 2000);
             } catch (err) {
                 console.error('Failed to copy: ', err);
-                
+
                 // Fallback for older browsers
                 const textArea = document.createElement("textarea");
                 textArea.value = text;
@@ -427,4 +457,5 @@
         loadImages();
     </script>
 </body>
+
 </html>
