@@ -98,7 +98,7 @@
             position: relative;
         }
 
-        #searchInput {
+        .search-container input {
             width: 100%;
             padding: 1rem 1.5rem;
             font-size: 1.1rem;
@@ -112,7 +112,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        #searchInput:focus {
+        .search-container input:focus {
             border-color: var(--accent-color);
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
         }
@@ -556,13 +556,13 @@
         const moonIcon = document.getElementById('moonIcon');
         const sunIcon = document.getElementById('sunIcon');
 
-        // Check for saved theme preference or system preference
+        // Check for saved theme preference or default to light
         const getPreferredTheme = () => {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 return savedTheme;
             }
-            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            return 'light'; // Set default theme to light
         };
 
         const setTheme = (theme) => {
